@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,9 +8,10 @@ namespace Tweeter.Models
 {
     public class Tweet
     {
+        [Key]
         public Guid Id { get; set; }
 
-        public User Author { get; set; }
+        public virtual User Author { get; set; }
 
         public string Text { get; set; }
 
@@ -19,6 +21,6 @@ namespace Tweeter.Models
 
         public int Favs { get; set; }
 
-        public ICollection<Tweet> Replies { get; set; }
+        //public virtual ICollection<Tweet> Replies { get; set; }
     }
 }
